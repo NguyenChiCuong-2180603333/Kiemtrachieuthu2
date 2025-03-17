@@ -58,8 +58,8 @@
                                 if (!$inCart && (!isset($hp->SoLuongDuKien) || $hp->SoLuongDuKien > 0)): 
                                 ?>
                                 <a href="<?php echo '/baitap/dangkyhocphan/HocPhan/add?id=' . $hp->MaHP; ?>" class="btn btn-success btn-sm">
-                                    <i class="fas fa-plus"></i> Đăng ký
-                                </a>
+    <i class="fas fa-plus"></i> Đăng ký
+</a>
                                 <?php else: ?>
                                 <button class="btn btn-secondary btn-sm" disabled>
                                     <?php echo $inCart ? 'Đã đăng ký' : 'Hết chỗ'; ?>

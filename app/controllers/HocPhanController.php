@@ -37,16 +37,15 @@ class HocPhanController
     }
     
     public function add()
-    {
-       
-        $this->checkLogin();
-        
-        if (!isset($_SESSION['cart'])) {
-            $_SESSION['cart'] = array();
-        }
-        
-        // Lấy mã học phần
-        $maHP = isset($_GET['id']) ? $_GET['id'] : null;
+{
+    $this->checkLogin();
+    
+    if (!isset($_SESSION['cart'])) {
+        $_SESSION['cart'] = array();
+    }
+    
+    // Lấy mã học phần từ query string
+    $maHP = isset($_GET['id']) ? $_GET['id'] : null;
         
         if ($maHP) {
             // Kiểm tra xem học phần đã tồn tại trong giỏ chưa
@@ -178,7 +177,7 @@ class HocPhanController
             $_SESSION['message'] = "Có lỗi xảy ra khi tạo đăng ký. Vui lòng thử lại.";
         }
         
-        // Nếu có lỗi, quay lại trang giỏ đăng ký
+        
         header('Location: ' . $this->baseUrl . 'HocPhan/cart');
         exit();
     }
