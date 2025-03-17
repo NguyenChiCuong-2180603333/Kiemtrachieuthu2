@@ -18,16 +18,16 @@ class DefaultController
     {
         // Kiểm tra xem người dùng đã đăng nhập chưa
         if (isset($_SESSION['user_id'])) {
-            // Nếu đã đăng nhập, chuyển hướng đến trang học phần
+            
             header('Location: ' . $this->baseUrl . 'HocPhan');
         } else {
-            // Nếu chưa đăng nhập, chuyển hướng đến trang đăng nhập
+            
             header('Location: ' . $this->baseUrl . 'Auth');
         }
         exit();
     }
 
-    // 404 error handling
+    
     public function notFound()
     {
         include 'app/views/errors/404.php';

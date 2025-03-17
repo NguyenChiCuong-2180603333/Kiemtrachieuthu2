@@ -57,13 +57,9 @@
                                 $inCart = isset($_SESSION['cart'][$hp->MaHP]);
                                 if (!$inCart && (!isset($hp->SoLuongDuKien) || $hp->SoLuongDuKien > 0)): 
                                 ?>
-                                <!-- Thay thế link bằng form để tránh vấn đề với tham số query string -->
-                                <form method="post" action="/baitap/dangkyhocphan/HocPhan/add_post" style="display:inline;">
-                                    <input type="hidden" name="id" value="<?php echo $hp->MaHP; ?>">
-                                    <button type="submit" class="btn btn-success btn-sm">
-                                        <i class="fas fa-plus"></i> Đăng ký
-                                    </button>
-                                </form>
+                                <a href="<?php echo '/baitap/dangkyhocphan/HocPhan/add?id=' . $hp->MaHP; ?>" class="btn btn-success btn-sm">
+                                    <i class="fas fa-plus"></i> Đăng ký
+                                </a>
                                 <?php else: ?>
                                 <button class="btn btn-secondary btn-sm" disabled>
                                     <?php echo $inCart ? 'Đã đăng ký' : 'Hết chỗ'; ?>
